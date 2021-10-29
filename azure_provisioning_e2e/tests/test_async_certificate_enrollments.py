@@ -73,6 +73,7 @@ def before_all_tests(request):
     request.addfinalizer(after_module)
 
 
+@pytest.mark.skip("check group only")
 @pytest.mark.it(
     "A device gets provisioned to the linked IoTHub with the user supplied device_id different from the registration_id of the individual enrollment that has been created with a selfsigned X509 authentication"
 )
@@ -100,6 +101,7 @@ async def test_device_register_with_device_id_for_a_x509_individual_enrollment(p
         service_client.delete_individual_enrollment_by_param(registration_id)
 
 
+@pytest.mark.skip("check group only")
 @pytest.mark.it(
     "A device gets provisioned to the linked IoTHub with device_id equal to the registration_id of the individual enrollment that has been created with a selfsigned X509 authentication"
 )

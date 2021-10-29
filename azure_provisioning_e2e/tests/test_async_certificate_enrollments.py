@@ -132,7 +132,7 @@ async def test_device_register_with_no_device_id_for_a_x509_individual_enrollmen
 )
 @pytest.mark.parametrize("protocol", ["mqtt", "mqttws"])
 async def test_group_of_devices_register_with_no_device_id_for_a_x509_intermediate_authentication_group_enrollment(
-    protocol
+    protocol,
 ):
     group_id = "e2e-intermediate-durmstrang" + str(uuid.uuid4())
     common_device_id = device_common_name
@@ -184,7 +184,8 @@ async def test_group_of_devices_register_with_no_device_id_for_a_x509_intermedia
         assert count == device_count_in_group
 
     finally:
-        service_client.delete_enrollment_group_by_param(group_id)
+        pass
+        # service_client.delete_enrollment_group_by_param(group_id)
 
 
 @pytest.mark.skip(
@@ -195,7 +196,7 @@ async def test_group_of_devices_register_with_no_device_id_for_a_x509_intermedia
 )
 @pytest.mark.parametrize("protocol", ["mqtt", "mqttws"])
 async def test_group_of_devices_register_with_no_device_id_for_a_x509_ca_authentication_group_enrollment(
-    protocol
+    protocol,
 ):
     group_id = "e2e-ca-ilvermorny" + str(uuid.uuid4())
     common_device_id = device_common_name
